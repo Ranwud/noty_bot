@@ -38,7 +38,7 @@ The bot will start reading the config.yaml file and sending notifications based 
 
 Make sure to keep the bot running in the background or on a server to ensure continuous notifications.
 
-## Installation
+## Requirements
 
 The required libraries for running this bot are listed in the `requirements.txt` file. You can install them using the following command:
 
