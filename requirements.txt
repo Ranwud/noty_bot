@@ -1,0 +1,4 @@
+logging
+pyyaml
+python-telegram-bot
+pyTelegramBotAPI
