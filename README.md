@@ -49,3 +49,15 @@ pip install -r requirements.txt
 Please note that it's recommended to create a virtual environment before installing the requirements to keep your Python environment clean.
 
 Now you are ready to set up and use the Telegram notification bot. Customize the `config.yaml` file according to your notification needs, start the bot, and enjoy regular notifications in your specified Telegram chat!
+
+
+## Description of config.yaml:
+
+* bot_token - The token of the Telegram bot. You can create a new bot using @BotFather and obtain its token.
+* period - This is the period when the bot will send notifications. The following values can be used: daily - every day, weekday - on weekdays, weekend - on weekends, or any day of the week.
+* start_time - The time when the notifications should start. It should be specified in square brackets and quotes. You can specify multiple start times. Example: start_time: ['00:00:00', '17:00:00'].
+* end_time - The time when the notifications should end. It should be specified in square brackets and quotes. You can specify multiple end times. Example: end_time: ['00:00:00', '17:00:00'].
+* days_of_week - The days of the week when the notifications should be sent. Where 0 represents Monday and 6 represents Sunday. This field is similar to the 'period' field. It is not necessary to include this field if the 'period' is set to daily.
+* interval - The interval in minutes after which the bot will send a new notification.
+* chat_id - The ID of the Telegram chat where the bot should send the notifications. First, the bot needs to be added to this chat. If it's a private message, you need to go to the bot in Telegram and press the START button.
+* text - The text that the bot should send.
