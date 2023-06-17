@@ -54,35 +54,41 @@ def should_send_notification(notification):
     period = notification['period']
     day_of_week = notification.get('day_of_week', None)
     days_of_week = notification.get('days_of_week', None)
+    last_notification = notification.get('last_notification', None)
+
+    if last_notification is not None:
+        time_since_last_notification = (now - last_notification).total_seconds() / 60
+        if time_since_last_notification < interval:
+            return False
 
     if period == 'daily':
         for start, end in zip(start_time, end_time):
-            if start <= now.time() <= end and (now.minute % interval == 0):
+            if start <= now.time() <= end:
                 return True
     elif period == 'weekday':
         if now.weekday() < 5:
             for start, end in zip(start_time, end_time):
-                if start <= now.time() <= end and (now.minute % interval == 0):
+                if start <= now.time() <= end:
                     return True
     elif period == 'weekend':
         if now.weekday() >= 5:
             for start, end in zip(start_time, end_time):
-                if start <= now.time() <= end and (now.minute % interval == 0):
+                if start <= now.time() <= end:
                     return True
     elif period in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
         if now.weekday() == ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].index(period):
             for start, end in zip(start_time, end_time):
-                if start <= now.time() <= end and (now.minute % interval == 0):
+                if start <= now.time() <= end:
                     return True
     elif period == 'weekly' and day_of_week is not None:
         if now.weekday() == day_of_week:
             for start, end in zip(start_time, end_time):
-                if start <= now.time() <= end and (now.minute % interval == 0):
+                if start <= now.time() <= end:
                     return True
     elif period == 'weekday' and days_of_week is not None:
         if now.weekday() in days_of_week:
             for start, end in zip(start_time, end_time):
-                if start <= now.time() <= end and (now.minute % interval == 0):
+                if start <= now.time() <= end:
                     return True
 
     return False
