@@ -54,7 +54,7 @@ Now you are ready to set up and use the Telegram notification bot. Customize the
 ## Description of config.yaml:
 
 * bot_token - The token of the Telegram bot. You can create a new bot using @BotFather and obtain its token.
-* period - This is the period when the bot will send notifications. The following values can be used: daily - every day, weekday - on weekdays, weekend - on weekends, or any day of the week.
+* period - The name of the notification. For example weekday, technical, special_important
 * start_time - The time when the notifications should start. It should be specified in square brackets and quotes. You can specify multiple start times. Example: start_time: ['00:00:00', '17:00:00'].
 * end_time - The time when the notifications should end. It should be specified in square brackets and quotes. You can specify multiple end times. Example: end_time: ['00:00:00', '17:00:00'].
 * days_of_week - The days of the week when the notifications should be sent. Where 0 represents Monday and 6 represents Sunday. This field is similar to the 'period' field. It is not necessary to include this field if the 'period' is set to daily.
