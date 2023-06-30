@@ -4,6 +4,7 @@ notifications:
     start_time: ['00:00:00']
     end_time: ['23:59:00']
     interval: 60
+    days_of_week: [0, 1, 2, 3, 4, 5, 6]
     chat_id: 123456789
     text: 'This notification is sent every day once an hour'
 
@@ -43,6 +44,7 @@ notifications:
     start_time: ['00:00:00', '17:00:00']
     end_time: ['05:00:00', '23:59:59']
     interval: 5
+    days_of_week: [0, 1, 2, 3, 4, 5, 6]
     chat_id: 123456789
     text: 'This notification comes from 17:00 to 05:00 along with a link <a href="https://www.google.com/">GOOGLE</a>'
 
